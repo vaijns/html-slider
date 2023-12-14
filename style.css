@@ -1,0 +1,100 @@
+:root{
+	--animation-duration: 0s;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+main{
+	font-family: sans-serif;
+}
+
+.slider{
+	display: flex;
+	width: 100%;
+	flex: 1;
+	overflow: hidden;
+}
+
+.slider ul{
+	list-style: none;;
+}
+
+.slider-item{
+	display: flex;
+	justify-content: center;
+	background-color: darkgray;
+	min-height: 100%;
+	min-width: 100%;
+	transition: margin-left ease-in-out var(--animation-duration);
+}
+
+.slider-item.before{
+	margin-left: -100%;
+}
+
+.slider-image{
+	background-color: yellow;
+	min-height: 100%;
+	min-width: 80%;
+	max-width: 100%;
+}
+
+.slider-wrapper{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.slider-wrapper button{
+	padding: .5em;
+}
+
+.slider-input-wrapper{
+	display: flex;
+	justify-content: center;
+	background-color: transparent;
+	margin-top: -100%;
+}
+
+.slider-input-wrapper span{
+	display: flex;
+	padding: .6em;
+}
+
+.selector.active{
+	background-color: darkgray;
+}
+
+.selector{
+	color: transparent;
+	outline: none;
+	border: none;
+	margin: .4em;
+	border-radius: 100%;
+	font-size: .6em;
+}
+
+/*can be ignored, tried to add borders with a roundish shape (with an svg)... didn't work so far*/
+.left, .center, .right{
+	background-color: white;
+}
+
+/*can be ignored, tried to add borders with a roundish shape (with an svg)... didn't work so far*/
+.left{
+	/*clip-path: path("m 0,1.0 c 0,0 0.5,0 0.5,-0.5 C 0.5,0 1.0,0 1.0,0 v 1.0 z");
+	clip-path: path("m 0,100 c 0,0 50,0 50,-50 C 50,0 100,0 100,0 v 100 z");*/
+	clip-path: path("m 0%,100% c 0%,0% 50%,0% 50%,-50% C 50%,0% 100%,0% 100%,0% v 100% z");
+	width: 50px;
+}
+
+/*can be ignored, tried to add borders with a roundish shape (with an svg)... didn't work so far*/
+.right{
+	/*clip-path: path("m 1.0,1.0 c 0,0 -0.5,0 -0.5,-0.5 C 0.5,0 0,0 0,0 v 1.0 z");
+	clip-path: path("m 100,100 c 0,0 -50,0 -50,-50 C 50,0 0,0 0,0 v 100 z");*/
+	clip-path: path("m 100%,100% c 0%,0% -50%,0% -50%,-50% C 50%,0% 0%,0% 0%,0% v 100% z");
+	width: 50px;
+}
